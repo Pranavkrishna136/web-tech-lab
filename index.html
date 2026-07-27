@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MVerse Electronics Store</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #eaf4ff, #f7fbff);
+            color: #1f2a44;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+        }
+
+        h1, h2, h3 {
+            color: #0b5fa5;
+        }
+
+        h1 {
+            text-align: center;
+            background: #0b5fa5;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .hero {
+            margin-bottom: 20px;
+            padding: 20px;
+            background: #f3f8ff;
+            border-left: 6px solid #0b5fa5;
+        }
+
+        .card {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #dce9f7;
+            border-radius: 8px;
+            background: #fcfdff;
+        }
+
+        img {
+            width: 180px;
+            height: 150px;
+            border-radius: 8px;
+            margin-right: 15px;
+        }
+
+        a {
+            color: #0b5fa5;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th, td {
+            border: 1px solid #c7dceb;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background: #e7f3ff;
+        }
+
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+        }
+
+        .two-column {
+            column-count: 2;
+            column-gap: 20px;
+        }
+
+        form {
+            margin-top: 10px;
+        }
+
+        fieldset {
+            padding: 15px;
+            border: 1px solid #c7dceb;
+            border-radius: 8px;
+        }
+
+        input, select, textarea, button {
+            margin-top: 6px;
+            padding: 8px;
+            border: 1px solid #c7dceb;
+            border-radius: 6px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        progress {
+            width: 100%;
+        }
+
+        @media (max-width: 700px) {
+            .two-column {
+                column-count: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Student Assignment: HTML5 Web Page with Forms and Media -->
+    <div class="container">
+        <h1>MVerse Electronics Store</h1>
+
+        <div class="hero">
+            <h2>Welcome to Our Store</h2>
+            <p>We offer modern electronics, fast service, and secure payment options for every customer.</p>
+            <p>Explore our laptops, mobiles, audio devices, and smart accessories.</p>
+            <a href="#order">Place Your Order</a>
+        </div>
+
+        <div class="card">
+            <h2>Featured Product</h2>
+            <img src="images/laptop.jpg" alt="Laptop image">
+            <p><strong>Gaming Laptop</strong></p>
+            <p>Powerful performance, full HD display, and long battery life.</p>
+            <a href="https://www.amazon.in" target="_blank">Buy Now</a>
+        </div>
+
+        <div class="card">
+            <h2>Price List</h2>
+            <table>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                </tr>
+                <tr>
+                    <td>Laptop</td>
+                    <td>₹55,000</td>
+                </tr>
+                <tr>
+                    <td>Mobile</td>
+                    <td>₹20,000</td>
+                </tr>
+                <tr>
+                    <td>Headphones</td>
+                    <td>₹2,500</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="card">
+            <h2>Electronics Showcase</h2>
+            <p>Enjoy a short audio clip and a demo video related to our electronic products.</p>
+
+            <h3>Audio</h3>
+            <audio controls>
+                <source src="thattathin_marayath.mp3" type="audio/mpeg">
+                Your browser does not support audio playback.
+            </audio>
+
+            <h3>Video</h3>
+            <video width="100%" controls poster="images/laptop.jpg">
+                <source src="vidssave.com iPhone Air Unboxing Space Black 1080P.mp4" type="video/mp4">
+                Your browser does not support video playback.
+            </video>
+        </div>
+
+        <div class="card" id="order">
+            <h2>Order Form</h2>
+            <form action="#" method="get">
+                <fieldset>
+                    <legend>Customer Details</legend>
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name">
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email">
+
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter phone number">
+
+                    <label for="product">Choose Product</label>
+                    <select id="product" name="product">
+                        <option value="laptop">Laptop</option>
+                        <option value="mobile">Mobile</option>
+                        <option value="headphones">Headphones</option>
+                    </select>
+
+                    <label for="address">Address</label>
+                    <textarea id="address" name="address" rows="4" placeholder="Enter your address"></textarea>
+
+                    <label for="progress">Order Progress</label>
+                    <progress id="progress" value="70" max="100"></progress>
+
+                    <div style="margin-top: 12px;">
+                        <input type="submit" value="Submit">
+                        <input type="reset" value="Reset">
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+
+        <div class="card">
+            <h2>Location</h2>
+            <p>Visit our electronics store at the city center.</p>
+            <iframe src="https://www.google.com/maps?q=Chennai&output=embed" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Store location map"></iframe>
+        </div>
+
+        <div class="card">
+            <h2>Why Choose Us?</h2>
+            <div class="two-column">
+                <p>✔ Genuine products and warranty support.</p>
+                <p>✔ Affordable prices for students and professionals.</p>
+                <p>✔ Fast delivery and friendly customer service.</p>
+                <p>✔ Secure payment and easy returns.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
