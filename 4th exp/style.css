@@ -1,0 +1,709 @@
+/* ==========================================================================
+   CSS Stylesheet for Web Technology Lab - Authentication Portal
+   Palette: Royal Blue, Vibrant Purple, Slate & Crisp White
+   ========================================================================== */
+
+/* 1. Global Reset & Box Sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #1e293b;
+    background-color: #0f172a;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 2. Header and Navigation Bar */
+.site-header {
+    background: linear-gradient(90deg, #0f172a 0%, #1e1b4b 50%, #1e293b 100%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo Styling */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.logo-icon {
+    font-size: 26px;
+    color: #60a5fa;
+    background: linear-gradient(135deg, #3b82f6, #a855f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.logo-text {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+}
+
+/* Navigation Menu */
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    display: block;
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 10px 18px;
+    border-radius: 8px;
+    transition: all 0.25s ease-in-out;
+}
+
+.nav-link .arrow {
+    font-size: 11px;
+    margin-left: 4px;
+    transition: transform 0.25s ease;
+    display: inline-block;
+}
+
+/* Nav Link Hover State */
+.nav-link:hover {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.has-dropdown:hover .nav-link {
+    color: #ffffff;
+    background-color: rgba(99, 102, 241, 0.2);
+}
+
+.has-dropdown:hover .arrow {
+    transform: rotate(180deg);
+}
+
+/* CSS-Only Dropdown Menu */
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    width: 210px;
+    background-color: #ffffff;
+    list-style: none;
+    border-radius: 12px;
+    padding: 8px 0;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.25), 0 2px 8px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e2e8f0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 100;
+}
+
+/* Dropdown Menu Show on Hover */
+.has-dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 10px 20px;
+    color: #334155;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #f1f5f9;
+    color: #4f46e5;
+    padding-left: 24px;
+}
+
+/* 3. Main Section with Tech Gradient Background */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 60px 20px 80px;
+    gap: 60px;
+    background: 
+        linear-gradient(135deg, rgba(15, 23, 42, 0.88) 0%, rgba(30, 27, 75, 0.86) 50%, rgba(76, 29, 149, 0.84) 100%),
+        url("https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1920&q=80") center/cover no-repeat fixed;
+}
+
+.auth-section {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Section Header Text */
+.section-header {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 45px;
+}
+
+.section-header .badge {
+    display: inline-block;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(168, 85, 247, 0.2));
+    border: 1px solid rgba(147, 197, 253, 0.3);
+    color: #93c5fd;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    padding: 6px 16px;
+    border-radius: 999px;
+    margin-bottom: 14px;
+}
+
+.section-header h1 {
+    font-size: 38px;
+    font-weight: 800;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+    background: linear-gradient(135deg, #ffffff 30%, #c7d2fe 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.section-header p {
+    font-size: 16px;
+    color: #cbd5e1;
+    max-width: 620px;
+    margin: 0 auto;
+}
+
+/* 4. Flexbox Forms Container (Side by Side) */
+.forms-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 36px;
+}
+
+/* 5. Authentication Form Cards */
+.auth-card {
+    background-color: #ffffff;
+    flex: 1;
+    max-width: 490px;
+    border-radius: 18px;
+    padding: 38px 36px;
+    box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.35), 0 0 1px 1px rgba(255, 255, 255, 0.4) inset;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.auth-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 26px 50px -10px rgba(0, 0, 0, 0.45);
+}
+
+.card-header {
+    margin-bottom: 24px;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 14px;
+}
+
+.card-header h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 6px;
+}
+
+.card-header p {
+    font-size: 13.5px;
+    color: #64748b;
+}
+
+/* 6. Form Field Styles */
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    text-align: left;
+}
+
+.form-group label {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #334155;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 14.5px;
+    font-family: inherit;
+    color: #0f172a;
+    background-color: #f8fafc;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+    outline: none;
+}
+
+.form-group input::placeholder {
+    color: #94a3b8;
+    font-size: 13.5px;
+}
+
+/* Input Focus Glow & Border */
+.form-group input:focus {
+    background-color: #ffffff;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15);
+}
+
+/* Checkbox & Options Row */
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    margin-top: -2px;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.checkbox-container input[type="checkbox"] {
+    accent-color: #4f46e5;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.checkbox-label {
+    color: #475569;
+    font-weight: 500;
+}
+
+.checkbox-label a {
+    color: #4f46e5;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.checkbox-label a:hover {
+    text-decoration: underline;
+}
+
+.forgot-link {
+    color: #4f46e5;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.forgot-link:hover {
+    color: #4338ca;
+    text-decoration: underline;
+}
+
+/* 7. Buttons with Hover Animation */
+.btn {
+    width: 100%;
+    padding: 13px 20px;
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 0.3px;
+    transition: all 0.25s ease-in-out;
+    margin-top: 6px;
+}
+
+/* Primary Sign-In Button */
+.btn-primary {
+    background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #1d4ed8 0%, #4338ca 100%);
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.45);
+    transform: translateY(-2px);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+/* Secondary Create Account Button */
+.btn-secondary {
+    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 14px rgba(124, 58, 237, 0.35);
+}
+
+.btn-secondary:hover {
+    background: linear-gradient(135deg, #4338ca 0%, #6d28d9 100%);
+    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.45);
+    transform: translateY(-2px);
+}
+
+.btn-secondary:active {
+    transform: translateY(0);
+}
+
+/* Form Footer Links */
+.form-footer {
+    text-align: center;
+    margin-top: 6px;
+}
+
+.form-footer p {
+    font-size: 13.5px;
+    color: #64748b;
+}
+
+.form-footer a {
+    color: #4f46e5;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.form-footer a:hover {
+    color: #312e81;
+    text-decoration: underline;
+}
+
+/* 8. Footer Section */
+.site-footer {
+    background-color: #0b0f19;
+    color: #94a3b8;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 30px 24px;
+    font-size: 13.5px;
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-info p {
+    margin: 4px 0;
+    line-height: 1.5;
+}
+
+.footer-info strong {
+    color: #e2e8f0;
+}
+
+.footer-bottom {
+    margin-top: 8px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    color: #64748b;
+    font-size: 13px;
+}
+
+/* 9. Responsive Design (Media Queries) */
+@media (max-width: 992px) {
+    .forms-wrapper {
+        gap: 24px;
+    }
+
+    .auth-card {
+        padding: 30px 26px;
+    }
+}
+
+@media (max-width: 820px) {
+    .forms-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .auth-card {
+        width: 100%;
+        max-width: 480px;
+    }
+
+    .section-header h1 {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 640px) {
+    .header-container {
+        height: auto;
+        padding: 14px 20px;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .nav-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 4px;
+    }
+
+    .nav-link {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    .dropdown-menu {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        display: none;
+        margin-top: 4px;
+        border-radius: 8px;
+    }
+
+    .has-dropdown:hover .dropdown-menu {
+        display: block;
+    }
+
+    .auth-card {
+        padding: 24px 20px;
+    }
+
+    .form-options {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .main-content {
+        padding: 40px 16px;
+    }
+}
+
+/* 10. Success Notification Alert */
+.success-alert {
+    background-color: #ecfdf5;
+    border: 1.5px solid #10b981;
+    color: #065f46;
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin-bottom: 20px;
+    display: none;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.15);
+    animation: fadeInDown 0.35s ease;
+}
+
+.success-alert.show {
+    display: flex;
+}
+
+.success-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background-color: #10b981;
+    color: #ffffff;
+    border-radius: 50%;
+    font-size: 14px;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.success-text h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #065f46;
+    margin-bottom: 2px;
+}
+
+.success-text p {
+    font-size: 12.5px;
+    color: #047857;
+    margin: 0;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 11. About EduPortal Section */
+.about-section {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    scroll-margin-top: 90px;
+}
+
+.about-card {
+    background-color: #ffffff;
+    border-radius: 18px;
+    padding: 44px 40px;
+    box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+}
+
+.about-header {
+    margin-bottom: 24px;
+}
+
+.about-header .badge {
+    display: inline-block;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.12), rgba(168, 85, 247, 0.12));
+    border: 1px solid rgba(99, 102, 241, 0.3);
+    color: #4f46e5;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    padding: 5px 14px;
+    border-radius: 999px;
+    margin-bottom: 12px;
+}
+
+.about-header h2 {
+    font-size: 32px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 8px;
+}
+
+.about-tagline {
+    font-size: 15px;
+    font-weight: 600;
+    color: #6366f1;
+}
+
+.about-description {
+    font-size: 15.5px;
+    color: #475569;
+    line-height: 1.7;
+    max-width: 820px;
+    margin: 0 auto 36px;
+}
+
+.features-grid {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    text-align: left;
+}
+
+.feature-card {
+    flex: 1;
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 26px 22px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px -5px rgba(0, 0, 0, 0.08);
+    border-color: #cbd5e1;
+}
+
+.feature-icon {
+    font-size: 28px;
+    margin-bottom: 14px;
+}
+
+.feature-card h3 {
+    font-size: 17px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 8px;
+}
+
+.feature-card p {
+    font-size: 13.5px;
+    color: #64748b;
+    line-height: 1.55;
+    margin: 0;
+}
+
+@media (max-width: 820px) {
+    .features-grid {
+        flex-direction: column;
+    }
+
+    .about-card {
+        padding: 30px 22px;
+    }
+}
+

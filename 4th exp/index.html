@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ApexPortal - Sign In & Sign Up</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 1. Header & Navigation Bar -->
+    <header class="site-header">
+        <div class="header-container">
+            <div class="logo">
+                <span class="logo-icon">&#10022;</span>
+                <span class="logo-text">EduPortal</span>
+            </div>
+
+            <nav class="navbar">
+                <ul class="nav-menu">
+                    <!-- Dropdown item under Home -->
+                    <li class="nav-item has-dropdown">
+                        <a href="#home" class="nav-link">Home <span class="arrow">&#9662;</span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#dashboard">Student Dashboard</a></li>
+                            <li><a href="#courses">Enrolled Courses</a></li>
+                            <li><a href="#syllabus">Syllabus &amp; Notes</a></li>
+                            <li><a href="#results">Exam Results</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">About</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 2. Main Section with Forms -->
+    <main class="main-content">
+        <section class="auth-section" id="home">
+            <div class="section-header">
+                <span class="badge">Student &amp; Faculty Portal</span>
+                <h1>Welcome Back!</h1>
+                <p>Access your student dashboard, courses, academic records, and lab submissions.</p>
+            </div>
+
+            <!-- Flexbox Forms Container (Side by Side) -->
+            <div class="forms-wrapper">
+
+                <!-- 3. Sign-In Form Card -->
+                <div class="auth-card" id="signin">
+                    <div class="card-header">
+                        <h2>Sign In</h2>
+                        <p>Enter your credentials to access your account</p>
+                    </div>
+
+                    <div id="signin-success-msg" class="success-alert">
+                        <span class="success-icon">&#10003;</span>
+                        <div class="success-text">
+                            <h4>Signed In Successfully!</h4>
+                            <p>Welcome back! You are now logged in.</p>
+                        </div>
+                    </div>
+
+                    <form action="#" method="get" class="auth-form" onsubmit="event.preventDefault(); document.getElementById('signin-success-msg').classList.add('show');">
+                        <div class="form-group">
+                            <label for="signin-email">Username or Email</label>
+                            <input 
+                                type="text" 
+                                id="signin-email" 
+                                name="username_or_email" 
+                                placeholder="name@example.com or username" 
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="signin-password">Password</label>
+                            <input 
+                                type="password" 
+                                id="signin-password" 
+                                name="password" 
+                                placeholder="Enter your password" 
+                                required
+                            >
+                        </div>
+
+                        <div class="form-options">
+                            <label class="checkbox-container">
+                                <input type="checkbox" id="remember-me" name="remember">
+                                <span class="checkbox-label">Remember Me</span>
+                            </label>
+                            <a href="#forgot-password" class="forgot-link">Forgot Password?</a>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Sign In</button>
+
+                        <div class="form-footer">
+                            <p>Don't have an account? <a href="#signup">Sign up</a></p>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- 4. Sign-Up Form Card -->
+                <div class="auth-card" id="signup">
+                    <div class="card-header">
+                        <h2>Create an Account</h2>
+                        <p>Get started with your free account in few minutes</p>
+                    </div>
+
+                    <div id="signup-success-msg" class="success-alert">
+                        <span class="success-icon">&#10003;</span>
+                        <div class="success-text">
+                            <h4>Account Created Successfully!</h4>
+                            <p>Welcome to ApexPortal! You can now sign in with your credentials.</p>
+                        </div>
+                    </div>
+
+                    <form action="#" method="get" class="auth-form" onsubmit="event.preventDefault(); document.getElementById('signup-success-msg').classList.add('show');">
+                        <div class="form-group">
+                            <label for="signup-fullname">Full Name</label>
+                            <input 
+                                type="text" 
+                                id="signup-fullname" 
+                                name="fullname" 
+                                placeholder="John Doe" 
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="signup-email">Email Address</label>
+                            <input 
+                                type="email" 
+                                id="signup-email" 
+                                name="email" 
+                                placeholder="john@example.com" 
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="signup-password">Password</label>
+                            <input 
+                                type="password" 
+                                id="signup-password" 
+                                name="password" 
+                                placeholder="Create a strong password" 
+                                minlength="8"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="signup-confirm-password">Confirm Password</label>
+                            <input 
+                                type="password" 
+                                id="signup-confirm-password" 
+                                name="confirm_password" 
+                                placeholder="Re-enter your password" 
+                                minlength="8"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-options terms-option">
+                            <label class="checkbox-container">
+                                <input type="checkbox" id="terms" name="terms" required>
+                                <span class="checkbox-label">I agree to the <a href="#terms-conditions">Terms and Conditions</a></span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-secondary">Create Account</button>
+
+                        <div class="form-footer">
+                            <p>Already have an account? <a href="#signin">Sign in</a></p>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 5. About EduPortal Section -->
+        <section class="about-section" id="about">
+            <div class="about-card">
+                <div class="about-header">
+                    <span class="badge">About Platform</span>
+                    <h2>About EduPortal</h2>
+                    <p class="about-tagline">Integrated Academic Management &amp; Digital Learning System</p>
+                </div>
+                <div class="about-content">
+                    <p class="about-description">
+                        <strong>EduPortal</strong> is a centralized digital learning platform built for higher education institutions. Designed to bridge communication between students, faculty members, and academic departments, the portal offers unified access to lecture materials, laboratory experiment submissions, grade reports, and university announcements in one seamless interface.
+                    </p>
+
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">&#128218;</div>
+                            <h3>Course Resources</h3>
+                            <p>Access syllabus outlines, downloadable lecture notes, assignments, and study materials anywhere.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">&#9881;</div>
+                            <h3>Lab Management</h3>
+                            <p>Submit Web Technology code assignments, verify experiment results, and track evaluation records.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">&#128202;</div>
+                            <h3>Performance Tracking</h3>
+                            <p>Monitor real-time academic attendance, internal assessment scores, and examination results.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 6. Footer Section -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-info">
+                <p class="footer-address">
+                    <strong>Developer Address:</strong> Department of Computer Science &amp; Engineering, Technology Campus, Tamil Nadu, India - 641114
+                </p>
+                <p class="footer-reg">
+                    <strong>Register Number:</strong> URK24CS1273 | <strong>Lab Batch:</strong> Web Technology Lab Batch 1
+                </p>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026–2027 EduPortal. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
