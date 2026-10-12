@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Tech Lab - Experiment 5: JavaScript DOM & Events</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="site-header">
+        <div class="header-content">
+            <h1>JavaScript DOM Elements &amp; Events</h1>
+            <p class="subtitle">Experiment No. 5 | Web Technology Laboratory</p>
+            <div class="student-pill">
+                <span>Student: <strong>Pranav Krishna KP</strong></span>
+                <span>Reg No: <strong>URK24CS1273</strong></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <ul class="nav-menu">
+            <li><a href="#dom">1. DOM Selectors</a></li>
+            <li><a href="#events">2. JS Events</a></li>
+            <li><a href="#wordfinder">3. Word Finder</a></li>
+            <li><a href="#bmi">4. BMI Calculator</a></li>
+            <li><a href="#fruitfarm">5. Fruit Farm</a></li>
+            <li><a href="#currency">6. Currency</a></li>
+            <li><a href="#coinflip">7. Coin Flip</a></li>
+            <li><a href="#cakeorder">8. Cake Order</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Container -->
+    <main class="container">
+
+        <!-- 1. DOM Elements Demonstration -->
+        <section class="card" id="dom">
+            <div class="card-header">
+                <span class="badge">Activity 1</span>
+                <h2>DOM Elements Demonstration</h2>
+                <p>Demonstrating <code>getElementById</code>, <code>getElementsByTagName</code>, <code>getElementsByClassName</code>, and <code>querySelectorAll</code>.</p>
+            </div>
+            
+            <div class="dom-demo-box">
+                <div id="demo-target-id" class="target-box">
+                    <p class="demo-tag-p">Paragraph 1: Testing <code>getElementsByTagName</code></p>
+                    <p class="demo-tag-p">Paragraph 2: Testing <code>getElementsByTagName</code></p>
+                    <div class="dom-items">
+                        <span class="demo-class-item">Class Item A</span>
+                        <span class="demo-class-item">Class Item B</span>
+                        <span class="demo-class-item">Class Item C</span>
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button class="btn btn-blue" onclick="testById()">Test getElementById()</button>
+                    <button class="btn btn-purple" onclick="testByTagName()">Test getElementsByTagName()</button>
+                    <button class="btn btn-green" onclick="testByClassName()">Test getElementsByClassName()</button>
+                    <button class="btn btn-orange" onclick="testQuerySelectorAll()">Test querySelectorAll()</button>
+                    <button class="btn btn-gray" onclick="resetDomDemo()">Reset DOM</button>
+                </div>
+                
+                <div class="result-box" id="dom-result-text">
+                    Click any button above to see DOM manipulation in action.
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. JavaScript Events Demonstration -->
+        <section class="card" id="events">
+            <div class="card-header">
+                <span class="badge">Activity 2</span>
+                <h2>JavaScript Events Demonstration</h2>
+                <p>Demonstrating <code>onclick</code>, <code>onchange</code>, <code>onmouseover</code>, <code>onmouseout</code>, <code>onkeydown</code>, and <code>onsubmit</code>.</p>
+            </div>
+
+            <div class="grid-2">
+                <!-- Click & Change -->
+                <div class="event-item">
+                    <h3>1. onclick &amp; onchange</h3>
+                    <button id="click-btn" class="btn btn-blue" onclick="handleClickEvent()">Click Me (Count: 0)</button>
+                    
+                    <div class="form-group" style="margin-top: 14px;">
+                        <label for="event-select">Select a Programming Language:</label>
+                        <select id="event-select" onchange="handleChangeEvent()">
+                            <option value="">-- Choose Language --</option>
+                            <option value="JavaScript">JavaScript</option>
+                            <option value="Python">Python</option>
+                            <option value="Java">Java</option>
+                            <option value="C++">C++</option>
+                        </select>
+                    </div>
+                    <div id="change-status" class="status-msg">No language selected.</div>
+                </div>
+
+                <!-- Hover Events -->
+                <div class="event-item">
+                    <h3>2. onmouseover &amp; onmouseout</h3>
+                    <div 
+                        id="hover-box" 
+                        class="hover-target" 
+                        onmouseover="handleMouseOver()" 
+                        onmouseout="handleMouseOut()"
+                    >
+                        Hover Your Mouse Over This Box!
+                    </div>
+                    <div id="hover-status" class="status-msg">Mouse status: Outside box.</div>
+                </div>
+
+                <!-- Keydown Event -->
+                <div class="event-item">
+                    <h3>3. onkeydown Event</h3>
+                    <label for="key-input">Type anything in this field:</label>
+                    <input 
+                        type="text" 
+                        id="key-input" 
+                        placeholder="Type here..." 
+                        onkeydown="handleKeyDown(event)"
+                    >
+                    <div id="key-status" class="status-msg">Last Key Pressed: None</div>
+                </div>
+
+                <!-- Form Submit Event -->
+                <div class="event-item">
+                    <h3>4. onsubmit Event</h3>
+                    <form id="event-form" onsubmit="handleFormSubmit(event)">
+                        <label for="student-name">Enter Student Name:</label>
+                        <input type="text" id="student-name" placeholder="Student name..." required>
+                        <button type="submit" class="btn btn-green" style="margin-top: 10px;">Submit Form</button>
+                    </form>
+                    <div id="submit-status" class="status-msg">Form not submitted yet.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. String Word Finder -->
+        <section class="card" id="wordfinder">
+            <div class="card-header">
+                <span class="badge">Activity 3</span>
+                <h2>String Word Finder</h2>
+                <p>Accept a sentence and display the shortest and longest words in it.</p>
+            </div>
+
+            <div class="form-group">
+                <label for="sentence-input">Enter a Sentence:</label>
+                <textarea 
+                    id="sentence-input" 
+                    rows="3" 
+                    placeholder="e.g. JavaScript DOM elements and interactive events make modern web applications powerful."
+                >JavaScript DOM elements and interactive events make modern web applications powerful.</textarea>
+            </div>
+
+            <div class="button-group">
+                <button class="btn btn-blue" onclick="findWords()">Find Shortest &amp; Longest Words</button>
+                <button class="btn btn-gray" onclick="clearWordFinder()">Clear</button>
+            </div>
+
+            <div class="result-box" id="word-results">
+                Results will be displayed here.
+            </div>
+        </section>
+
+        <!-- 4. BMI Calculator -->
+        <section class="card" id="bmi">
+            <div class="card-header">
+                <span class="badge">Activity 4</span>
+                <h2>Body Mass Index (BMI) Calculator</h2>
+                <p>Calculate your BMI score and identify your health category.</p>
+            </div>
+
+            <div class="grid-2">
+                <div class="form-group">
+                    <label for="weight">Weight (in kg):</label>
+                    <input type="number" id="weight" placeholder="e.g. 68" min="1" step="0.1" value="68">
+                </div>
+                <div class="form-group">
+                    <label for="height">Height (in cm):</label>
+                    <input type="number" id="height" placeholder="e.g. 175" min="1" step="0.1" value="175">
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button class="btn btn-green" onclick="calculateBMI()">Calculate BMI</button>
+                <button class="btn btn-gray" onclick="resetBMI()">Reset</button>
+            </div>
+
+            <div class="result-box" id="bmi-result">
+                Enter weight and height and click "Calculate BMI".
+            </div>
+
+            <div class="info-table-wrap">
+                <p><strong>BMI Categories Reference:</strong></p>
+                <table class="mini-table">
+                    <tr><th>Underweight</th><td>BMI &lt; 18.5</td></tr>
+                    <tr><th>Normal Weight</th><td>BMI 18.5 &ndash; 24.9</td></tr>
+                    <tr><th>Overweight</th><td>BMI 25.0 &ndash; 29.9</td></tr>
+                    <tr><th>Obese</th><td>BMI &ge; 30.0</td></tr>
+                </table>
+            </div>
+        </section>
+
+        <!-- 5. Fruit Farm -->
+        <section class="card" id="fruitfarm">
+            <div class="card-header">
+                <span class="badge">Activity 5</span>
+                <h2>Fruit Farm Generator</h2>
+                <p>Generate a dynamic grid of randomly selected Apples and Oranges based on rows and columns.</p>
+            </div>
+
+            <div class="grid-2">
+                <div class="form-group">
+                    <label for="farm-rows">Number of Rows (1 to 10):</label>
+                    <input type="number" id="farm-rows" min="1" max="10" value="4">
+                </div>
+                <div class="form-group">
+                    <label for="farm-cols">Number of Columns (1 to 10):</label>
+                    <input type="number" id="farm-cols" min="1" max="10" value="5">
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button class="btn btn-orange" onclick="generateFruitFarm()">Plant Orchard (Generate)</button>
+                <button class="btn btn-gray" onclick="clearFruitFarm()">Clear Farm</button>
+            </div>
+
+            <div class="fruit-stats" id="fruit-stats" style="display: none;">
+                <span class="stat-badge apple-stat">&#127822; Apples: <strong id="apple-count">0</strong></span>
+                <span class="stat-badge orange-stat">&#127818; Oranges: <strong id="orange-count">0</strong></span>
+                <span class="stat-badge total-stat">&#129386; Total Fruits: <strong id="total-fruit-count">0</strong></span>
+            </div>
+
+            <div id="farm-grid-container" class="farm-grid-wrapper">
+                Click "Plant Orchard" to generate the fruits.
+            </div>
+        </section>
+
+        <!-- 6. Currency Converter -->
+        <section class="card" id="currency">
+            <div class="card-header">
+                <span class="badge">Activity 6</span>
+                <h2>Currency Converter</h2>
+                <p>Convert seamlessly between Indian Rupees (INR) and US Dollars (USD).</p>
+            </div>
+
+            <div class="grid-2">
+                <div class="form-group">
+                    <label for="currency-amount">Amount:</label>
+                    <input type="number" id="currency-amount" placeholder="Enter amount" min="0" step="0.01" value="1000">
+                </div>
+                <div class="form-group">
+                    <label for="conversion-type">Conversion Type:</label>
+                    <select id="conversion-type">
+                        <option value="inr-to-usd">Indian Rupees (INR) to US Dollars (USD)</option>
+                        <option value="usd-to-inr">US Dollars (USD) to Indian Rupees (INR)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button class="btn btn-blue" onclick="convertCurrency()">Convert Currency</button>
+            </div>
+
+            <div class="result-box" id="currency-result">
+                Conversion factor: <strong>1 USD = 83.50 INR</strong>
+            </div>
+        </section>
+
+        <!-- 7. Coin Flip -->
+        <section class="card" id="coinflip">
+            <div class="card-header">
+                <span class="badge">Activity 7</span>
+                <h2>Interactive Coin Flip</h2>
+                <p>Randomly flips Heads or Tails and maintains live scoreboard counts.</p>
+            </div>
+
+            <div class="coin-stage">
+                <div class="coin-display" id="coin-element">
+                    <img id="coin-img" src="images/heads.svg" alt="Coin Face">
+                </div>
+                <h3 id="coin-outcome">Click button to flip!</h3>
+            </div>
+
+            <div class="button-group" style="justify-content: center;">
+                <button class="btn btn-purple" onclick="flipCoin()">Flip Coin</button>
+                <button class="btn btn-gray" onclick="resetCoinStats()">Reset Score</button>
+            </div>
+
+            <div class="scoreboard">
+                <div class="score-card">
+                    <h4>Total Flips</h4>
+                    <span id="score-total">0</span>
+                </div>
+                <div class="score-card heads-card">
+                    <h4>Heads</h4>
+                    <span id="score-heads">0</span>
+                </div>
+                <div class="score-card tails-card">
+                    <h4>Tails</h4>
+                    <span id="score-tails">0</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Birthday Cake Order Form -->
+        <section class="card" id="cakeorder">
+            <div class="card-header">
+                <span class="badge">Activity 8</span>
+                <h2>Birthday Cake Order Form</h2>
+                <p>Calculate order total based on cake weights, 9% tax, and custom tip percentages.</p>
+            </div>
+
+            <div class="cake-form-wrap">
+                <div class="cake-item-row">
+                    <div class="cake-info">
+                        <strong>1/2 kg Chocolate Truffle Cake</strong>
+                        <span>Price: &#8377;300 each</span>
+                    </div>
+                    <div class="cake-qty">
+                        <label for="cake-half">Quantity:</label>
+                        <input type="number" id="cake-half" min="0" value="1">
+                    </div>
+                </div>
+
+                <div class="cake-item-row">
+                    <div class="cake-info">
+                        <strong>1 kg Black Forest Cake</strong>
+                        <span>Price: &#8377;550 each</span>
+                    </div>
+                    <div class="cake-qty">
+                        <label for="cake-one">Quantity:</label>
+                        <input type="number" id="cake-one" min="0" value="0">
+                    </div>
+                </div>
+
+                <div class="cake-item-row">
+                    <div class="cake-info">
+                        <strong>2 kg Red Velvet Premium Cake</strong>
+                        <span>Price: &#8377;1,000 each</span>
+                    </div>
+                    <div class="cake-qty">
+                        <label for="cake-two">Quantity:</label>
+                        <input type="number" id="cake-two" min="0" value="0">
+                    </div>
+                </div>
+
+                <div class="tip-selection">
+                    <label>Select Tip Percentage:</label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="cake-tip" value="10" checked> 10%
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="cake-tip" value="15"> 15%
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="cake-tip" value="20"> 20%
+                        </label>
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button class="btn btn-green" onclick="calculateCakeOrder()">Calculate Total Cost</button>
+                    <button class="btn btn-gray" onclick="resetCakeOrder()">Reset Order</button>
+                </div>
+
+                <div class="result-box bill-summary" id="cake-bill">
+                    Select quantities and tip, then click "Calculate Total Cost".
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p><strong>Department of Computer Science &amp; Engineering</strong></p>
+            <p>Web Technology Laboratory &bull; Experiment 5: JavaScript &ndash; DOM Elements and Events</p>
+            <p>&copy; 2026 Pranav Krishna KP (Register No: URK24CS1273). All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Link External JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
