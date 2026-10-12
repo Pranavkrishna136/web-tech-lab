@@ -1,0 +1,700 @@
+/* =========================================================
+   MVerse Electronics Store - CSS Stylesheet
+   Web Technology Lab: Experiment 3 (HTML5 and CSS3)
+   ========================================================= */
+
+/* 1. Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #f4f7fb;
+    color: #222222;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 2. Top Banner */
+.top-banner {
+    background-color: #0b172a;
+    color: #ffffff;
+    text-align: center;
+    padding: 8px 15px;
+    font-size: 13px;
+}
+
+/* 3. Header Section */
+.header {
+    background-color: #111827;
+    color: #ffffff;
+    padding: 16px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.logo h2 {
+    font-size: 22px;
+    color: #38bdf8;
+}
+
+/* Search Box */
+.search-box form {
+    display: flex;
+}
+
+.search-box input {
+    padding: 8px 12px;
+    border: 1px solid #374151;
+    background-color: #1f2937;
+    color: #ffffff;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+    width: 280px;
+}
+
+.search-box button {
+    padding: 8px 16px;
+    background-color: #2563eb;
+    color: #ffffff;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.search-box button:hover {
+    background-color: #1d4ed8;
+}
+
+/* User Account & Cart */
+.user-links {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 14px;
+}
+
+.user-links a:hover {
+    color: #38bdf8;
+}
+
+.cart-btn {
+    background-color: #2563eb;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.cart-btn:hover {
+    background-color: #1d4ed8;
+}
+
+/* 4. Navigation Bar */
+.navbar {
+    background-color: #1f2937;
+    border-bottom: 2px solid #2563eb;
+}
+
+.nav-links {
+    max-width: 1100px;
+    margin: 0 auto;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.nav-links li a {
+    display: block;
+    color: #e5e7eb;
+    padding: 12px 18px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.nav-links li a:hover {
+    background-color: #2563eb;
+    color: #ffffff;
+}
+
+/* 5. Hero Section */
+.hero {
+    background: linear-gradient(rgba(11, 23, 42, 0.85), rgba(11, 23, 42, 0.85)), 
+                url('images/laptop.jpg') center/cover no-repeat;
+    color: #ffffff;
+    text-align: center;
+    padding: 70px 20px;
+}
+
+.hero-text {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-text h1 {
+    font-size: 36px;
+    margin-bottom: 12px;
+    color: #ffffff;
+}
+
+.hero-text p {
+    font-size: 16px;
+    margin-bottom: 25px;
+    color: #cbd5e1;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* General Buttons */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.2s;
+}
+
+.btn-primary {
+    background-color: #2563eb;
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: #1d4ed8;
+}
+
+.btn-secondary {
+    background-color: #4b5563;
+    color: #ffffff;
+}
+
+.btn-secondary:hover {
+    background-color: #374151;
+}
+
+/* 6. Rewards / Progress Bar Section */
+.rewards-section {
+    max-width: 1100px;
+    margin: 25px auto;
+    padding: 0 20px;
+}
+
+.rewards-box {
+    background-color: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.rewards-box h3 {
+    color: #1e3a8a;
+    margin-bottom: 6px;
+}
+
+.rewards-box p {
+    font-size: 14px;
+    color: #4b5563;
+    margin-bottom: 12px;
+}
+
+.rewards-box label {
+    font-size: 13px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 6px;
+}
+
+/* HTML5 <progress> Styling */
+progress {
+    width: 100%;
+    height: 16px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* 7. Section Titles */
+.section-title {
+    text-align: center;
+    font-size: 26px;
+    color: #111827;
+    margin-bottom: 25px;
+}
+
+.text-white {
+    color: #ffffff;
+}
+
+/* 8. Categories Section */
+.categories-section {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.category-card {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.category-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+}
+
+.category-card img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto 12px;
+    border: 2px solid #2563eb;
+}
+
+.category-card h3 {
+    font-size: 16px;
+    color: #111827;
+    margin-bottom: 4px;
+}
+
+.category-card p {
+    font-size: 13px;
+    color: #6b7280;
+}
+
+/* 9. Featured Products Section */
+.products-section {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+}
+
+.product-card {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #dc2626;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.product-card img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+}
+
+.product-details {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+}
+
+.product-details h3 {
+    font-size: 16px;
+    color: #111827;
+}
+
+.product-details p {
+    font-size: 13px;
+    color: #4b5563;
+    flex: 1;
+}
+
+.rating {
+    font-size: 13px;
+    color: #f59e0b;
+}
+
+.price {
+    margin: 6px 0;
+}
+
+.new-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #1d4ed8;
+    margin-right: 8px;
+}
+
+.old-price {
+    font-size: 14px;
+    color: #9ca3af;
+    text-decoration: line-through;
+}
+
+.btn-buy {
+    background-color: #111827;
+    color: #ffffff;
+    text-align: center;
+    padding: 8px 12px;
+}
+
+.btn-buy:hover {
+    background-color: #2563eb;
+}
+
+/* 10. Best Deals Section */
+.deals-section {
+    background-color: #0b172a;
+    padding: 50px 20px;
+    margin: 40px 0;
+}
+
+.deals-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.deal-card {
+    background-color: #1e293b;
+    border: 1px solid #334155;
+    color: #ffffff;
+    border-radius: 8px;
+    padding: 18px;
+    text-align: center;
+}
+
+.deal-badge {
+    display: inline-block;
+    background-color: #dc2626;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.deal-card img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 12px;
+}
+
+.deal-card h3 {
+    font-size: 17px;
+    margin-bottom: 6px;
+}
+
+.deal-card p {
+    font-size: 13px;
+    color: #cbd5e1;
+    margin-bottom: 10px;
+}
+
+.deal-price {
+    font-size: 15px;
+    font-weight: bold;
+    color: #38bdf8;
+    margin-bottom: 14px;
+}
+
+.deal-price del {
+    color: #94a3b8;
+    font-weight: normal;
+    margin-left: 6px;
+}
+
+.btn-deal {
+    background-color: #2563eb;
+    color: #ffffff;
+    padding: 8px 16px;
+}
+
+.btn-deal:hover {
+    background-color: #1d4ed8;
+}
+
+/* 11. Comparison Table Section */
+.table-section {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.table-container {
+    overflow-x: auto;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+th, td {
+    border: 1px solid #e5e7eb;
+    padding: 12px 16px;
+    text-align: left;
+}
+
+th {
+    background-color: #1e3a8a;
+    color: #ffffff;
+}
+
+tr:nth-child(even) {
+    background-color: #f9fafb;
+}
+
+tr:hover {
+    background-color: #eff6ff;
+}
+
+/* 12. HTML5 Multimedia Section */
+.media-section {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.media-box {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 18px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.media-box h3 {
+    font-size: 15px;
+    color: #111827;
+    margin-bottom: 6px;
+}
+
+.media-box p {
+    font-size: 13px;
+    color: #6b7280;
+    margin-bottom: 12px;
+}
+
+audio, video, embed, iframe {
+    width: 100%;
+    border-radius: 6px;
+}
+
+video {
+    max-height: 180px;
+    background-color: #000000;
+}
+
+/* 13. Customer Enquiry Form */
+.enquiry-section {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.form-container {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    padding: 25px;
+}
+
+fieldset {
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+legend {
+    font-size: 15px;
+    font-weight: bold;
+    color: #1e3a8a;
+    padding: 0 8px;
+}
+
+.form-group {
+    margin-bottom: 14px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    color: #374151;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 9px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #2563eb;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+/* 14. Footer Section */
+.footer {
+    background-color: #111827;
+    color: #9ca3af;
+    padding: 40px 20px 20px;
+    font-size: 13px;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    margin-bottom: 25px;
+}
+
+.footer-col h3 {
+    color: #ffffff;
+    font-size: 15px;
+    margin-bottom: 12px;
+}
+
+.footer-col p {
+    margin-bottom: 6px;
+    line-height: 1.5;
+}
+
+.footer-col a {
+    color: #9ca3af;
+}
+
+.footer-col a:hover {
+    color: #38bdf8;
+}
+
+.footer-col strong {
+    color: #ffffff;
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #374151;
+    padding-top: 16px;
+    color: #6b7280;
+}
+
+/* 15. Responsive Design (Mobile / Tablet Media Queries) */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .search-box input {
+        width: 200px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+    }
+
+    .nav-links li a {
+        padding: 10px;
+    }
+
+    .hero-text h1 {
+        font-size: 28px;
+    }
+}

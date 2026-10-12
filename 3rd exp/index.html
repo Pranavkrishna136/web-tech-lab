@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MVerse Electronics Store - Experiment 3</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Top Notice Banner -->
+    <div class="top-banner">
+        <p>Festive Tech Sale: Up to 50% Off on Laptops, Mobiles &amp; Audio Gear | Free Delivery</p>
+    </div>
+
+    <!-- Header Section -->
+    <header class="header">
+        <div class="header-container">
+            <!-- Website Logo -->
+            <div class="logo">
+                <h2>⚡ MVerse Electronics</h2>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="search-box">
+                <form action="#products" method="get">
+                    <input type="text" name="search" placeholder="Search gadgets, laptops, phones...">
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+
+            <!-- User Links -->
+            <div class="user-links">
+                <a href="#enquiry">My Account</a>
+                <a href="#products" class="cart-btn">Cart (3)</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#categories">Categories</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#deals">Deals</a></li>
+            <li><a href="#comparison">Compare</a></li>
+            <li><a href="#media">Media</a></li>
+            <li><a href="#enquiry">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-text">
+                <h1>Upgrade Your Tech Life</h1>
+                <p>Welcome to MVerse Electronics Store! Explore the latest high-performance smartphones, premium laptops, wireless audio gear, and modern accessories at student-friendly prices.</p>
+                <div class="hero-buttons">
+                    <a href="#products" class="btn btn-primary">Shop Now</a>
+                    <a href="#deals" class="btn btn-secondary">View Deals</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- HTML5 Progress / Rewards Bar -->
+        <section class="rewards-section">
+            <div class="rewards-box">
+                <h3>MVerse Rewards Membership</h3>
+                <p>You have earned 750 reward points! Complete one more order to reach Gold Member tier.</p>
+                <label for="reward-progress">Membership Progress (75%):</label>
+                <progress id="reward-progress" value="75" max="100">75%</progress>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="categories-section" id="categories">
+            <h2 class="section-title">Shop by Category</h2>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <img src="images/mobile.jpg" alt="Mobiles">
+                    <h3>Smartphones</h3>
+                    <p>5G &amp; Flagship Phones</p>
+                </div>
+                <div class="category-card">
+                    <img src="images/laptop.jpg" alt="Laptops">
+                    <h3>Laptops</h3>
+                    <p>Gaming &amp; Study Laptops</p>
+                </div>
+                <div class="category-card">
+                    <img src="images/headphones.jpg" alt="Audio">
+                    <h3>Audio Devices</h3>
+                    <p>ANC Headphones &amp; Buds</p>
+                </div>
+                <div class="category-card">
+                    <img src="images/watch.jpg" alt="Wearables">
+                    <h3>Smartwatches</h3>
+                    <p>Fitness Bands &amp; Watches</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products Section -->
+        <section class="products-section" id="products">
+            <h2 class="section-title">Featured Products</h2>
+            <div class="products-grid">
+                
+                <!-- Product 1: Smartphone -->
+                <div class="product-card">
+                    <span class="badge">Bestseller</span>
+                    <img src="images/mobile.jpg" alt="MVerse 5G Smartphone">
+                    <div class="product-details">
+                        <h3>MVerse Apex 5G Phone</h3>
+                        <p>6.7-inch AMOLED screen, 50MP camera, 5000mAh long-lasting battery.</p>
+                        <div class="rating">★★★★★ (4.8)</div>
+                        <div class="price">
+                            <span class="new-price">&#8377;54,999</span>
+                            <span class="old-price">&#8377;64,999</span>
+                        </div>
+                        <a href="#enquiry" class="btn btn-buy">View Product</a>
+                    </div>
+                </div>
+
+                <!-- Product 2: Laptop -->
+                <div class="product-card">
+                    <span class="badge">Sale</span>
+                    <img src="images/laptop.jpg" alt="MVerse Ultrabook Laptop">
+                    <div class="product-details">
+                        <h3>UltraBook Blade X14</h3>
+                        <p>Intel Core i7 processor, 16GB RAM, 512GB SSD, thin and light metal body.</p>
+                        <div class="rating">★★★★★ (4.9)</div>
+                        <div class="price">
+                            <span class="new-price">&#8377;76,999</span>
+                            <span class="old-price">&#8377;89,999</span>
+                        </div>
+                        <a href="#enquiry" class="btn btn-buy">View Product</a>
+                    </div>
+                </div>
+
+                <!-- Product 3: Headphones -->
+                <div class="product-card">
+                    <span class="badge">40% Off</span>
+                    <img src="images/headphones.jpg" alt="MVerse Wireless Headphones">
+                    <div class="product-details">
+                        <h3>SonicPulse Wireless ANC</h3>
+                        <p>Active Noise Cancellation, 40mm drivers, and up to 40 hours battery life.</p>
+                        <div class="rating">★★★★☆ (4.7)</div>
+                        <div class="price">
+                            <span class="new-price">&#8377;3,999</span>
+                            <span class="old-price">&#8377;6,999</span>
+                        </div>
+                        <a href="#enquiry" class="btn btn-buy">View Product</a>
+                    </div>
+                </div>
+
+                <!-- Product 4: Smartwatch -->
+                <div class="product-card">
+                    <span class="badge">New</span>
+                    <img src="images/watch.jpg" alt="MVerse Smartwatch">
+                    <div class="product-details">
+                        <h3>Horizon Watch Elite</h3>
+                        <p>AMOLED touch display, heart rate sensor, fitness tracking, waterproof design.</p>
+                        <div class="rating">★★★★★ (4.8)</div>
+                        <div class="price">
+                            <span class="new-price">&#8377;5,499</span>
+                            <span class="old-price">&#8377;7,999</span>
+                        </div>
+                        <a href="#enquiry" class="btn btn-buy">View Product</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Best Deals Section -->
+        <section class="deals-section" id="deals">
+            <h2 class="section-title text-white">Today's Best Deals</h2>
+            <div class="deals-grid">
+                <div class="deal-card">
+                    <span class="deal-badge">Save 20%</span>
+                    <img src="images/laptop.jpg" alt="Gaming Laptop">
+                    <h3>Gaming Laptop Pro</h3>
+                    <p>High speed Intel processor with dedicated graphics card.</p>
+                    <p class="deal-price">Offer: &#8377;69,999 <del>&#8377;85,000</del></p>
+                    <a href="#enquiry" class="btn btn-deal">Claim Deal</a>
+                </div>
+
+                <div class="deal-card">
+                    <span class="deal-badge">Save 35%</span>
+                    <img src="images/headphones.jpg" alt="Bluetooth Headphones">
+                    <h3>BassPro Headphones</h3>
+                    <p>Deep bass with built-in microphone for study and meetings.</p>
+                    <p class="deal-price">Offer: &#8377;2,499 <del>&#8377;3,999</del></p>
+                    <a href="#enquiry" class="btn btn-deal">Claim Deal</a>
+                </div>
+
+                <div class="deal-card">
+                    <span class="deal-badge">Save 30%</span>
+                    <img src="images/watch.jpg" alt="Fitness Smartwatch">
+                    <h3>FitPulse Smart Band</h3>
+                    <p>Step counter, sleep monitor, and smartphone notifications.</p>
+                    <p class="deal-price">Offer: &#8377;1,999 <del>&#8377;2,999</del></p>
+                    <a href="#enquiry" class="btn btn-deal">Claim Deal</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Comparison Table Section -->
+        <section class="table-section" id="comparison">
+            <h2 class="section-title">Product Specification Comparison</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Key Feature</th>
+                            <th>Warranty</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>MVerse Apex 5G</td>
+                            <td>Smartphone</td>
+                            <td>&#8377;54,999</td>
+                            <td>120Hz AMOLED &amp; 50MP Camera</td>
+                            <td>1 Year</td>
+                        </tr>
+                        <tr>
+                            <td>UltraBook Blade X14</td>
+                            <td>Laptop</td>
+                            <td>&#8377;76,999</td>
+                            <td>Intel Core i7 &amp; 16GB RAM</td>
+                            <td>2 Years</td>
+                        </tr>
+                        <tr>
+                            <td>SonicPulse Wireless</td>
+                            <td>Audio</td>
+                            <td>&#8377;3,999</td>
+                            <td>Active Noise Cancellation</td>
+                            <td>1 Year</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- HTML5 Multimedia Showcase -->
+        <section class="media-section" id="media">
+            <h2 class="section-title">HTML5 Multimedia Showcase</h2>
+            <div class="media-grid">
+                
+                <!-- Audio Controls -->
+                <div class="media-box">
+                    <h3>Product Audio Demo</h3>
+                    <p>Listen to device notification sound:</p>
+                    <audio controls>
+                        <source src="ringtone.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+
+                <!-- Video Controls -->
+                <div class="media-box">
+                    <h3>Product Unboxing Video</h3>
+                    <p>Watch gadget unboxing preview:</p>
+                    <video controls poster="images/laptop.jpg">
+                        <source src="unboxing.mp4" type="video/mp4">
+                        Your browser does not support the video element.
+                    </video>
+                </div>
+
+                <!-- Embed PDF -->
+                <div class="media-box">
+                    <h3>Catalogue (PDF Embed)</h3>
+                    <p>View product specifications guide:</p>
+                    <embed src="catalogue.pdf" type="application/pdf" width="100%" height="200">
+                </div>
+
+                <!-- Iframe Map -->
+                <div class="media-box">
+                    <h3>Store Location Map</h3>
+                    <p>Find our physical electronics store:</p>
+                    <iframe src="https://www.google.com/maps?q=Chennai&output=embed" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Customer Enquiry Form -->
+        <section class="enquiry-section" id="enquiry">
+            <h2 class="section-title">Customer Enquiry Form</h2>
+            <div class="form-container">
+                <form action="#" method="get">
+                    <fieldset>
+                        <legend>Electronics Enquiry Details</legend>
+
+                        <div class="form-group">
+                            <label for="fullname">Full Name:</label>
+                            <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address:</label>
+                            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number:</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Enter 10-digit number" pattern="[0-9]{10}" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="category">Product Category:</label>
+                            <select id="category" name="category" required>
+                                <option value="" disabled selected>-- Select Category --</option>
+                                <option value="smartphones">Smartphones</option>
+                                <option value="laptops">Laptops</option>
+                                <option value="audio">Audio Devices</option>
+                                <option value="wearables">Smartwatches</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="product-name">Preferred Product:</label>
+                            <input type="text" id="product-name" name="product_name" placeholder="e.g. UltraBook Laptop">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message:</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Write your questions or order requirements..." required></textarea>
+                        </div>
+
+                        <div class="form-buttons">
+                            <button type="submit" class="btn btn-primary">Submit Enquiry</button>
+                            <button type="reset" class="btn btn-secondary">Reset</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>MVerse Electronics Store</h3>
+                <p>An online electronics shopping website offering genuine smartphones, laptops, audio gear, and tech accessories.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <p><a href="#home">Home</a></p>
+                <p><a href="#categories">Categories</a></p>
+                <p><a href="#products">Products</a></p>
+                <p><a href="#deals">Deals</a></p>
+            </div>
+            <div class="footer-col">
+                <h3>Customer Support</h3>
+                <p>Email: support@mverse.com</p>
+                <p>Phone: +91 98765 43210</p>
+                <p>Location: Technology Campus, India</p>
+            </div>
+            <div class="footer-col">
+                <h3>Student Information</h3>
+                <p><strong>Developer:</strong> Pranav Krishna KP</p>
+                <p><strong>Register No:</strong> URK24CS1273</p>
+                <p><strong>Subject:</strong> Web Technology Lab</p>
+                <p><strong>Experiment:</strong> Ex. No. 3 (HTML5 &amp; CSS3)</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 MVerse Electronics Store. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
