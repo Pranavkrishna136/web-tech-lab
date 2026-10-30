@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ApexPortal - Sign In & Sign Up</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <!-- 1. Header & Navigation Bar -->
@@ -63,27 +65,18 @@
                         </div>
                     </div>
 
-                    <form action="#" method="get" class="auth-form" onsubmit="event.preventDefault(); document.getElementById('signin-success-msg').classList.add('show');">
+                    <form action="#" method="get" class="auth-form"
+                        onsubmit="event.preventDefault(); document.getElementById('signin-success-msg').classList.add('show');">
                         <div class="form-group">
                             <label for="signin-email">Username or Email</label>
-                            <input 
-                                type="text" 
-                                id="signin-email" 
-                                name="username_or_email" 
-                                placeholder="name@example.com or username" 
-                                required
-                            >
+                            <input type="text" id="signin-email" name="username_or_email"
+                                placeholder="name@example.com or username" required>
                         </div>
 
                         <div class="form-group">
                             <label for="signin-password">Password</label>
-                            <input 
-                                type="password" 
-                                id="signin-password" 
-                                name="password" 
-                                placeholder="Enter your password" 
-                                required
-                            >
+                            <input type="password" id="signin-password" name="password"
+                                placeholder="Enter your password" required>
                         </div>
 
                         <div class="form-options">
@@ -117,57 +110,35 @@
                         </div>
                     </div>
 
-                    <form action="#" method="get" class="auth-form" onsubmit="event.preventDefault(); document.getElementById('signup-success-msg').classList.add('show');">
+                    <form action="#" method="get" class="auth-form"
+                        onsubmit="event.preventDefault(); document.getElementById('signup-success-msg').classList.add('show');">
                         <div class="form-group">
                             <label for="signup-fullname">Full Name</label>
-                            <input 
-                                type="text" 
-                                id="signup-fullname" 
-                                name="fullname" 
-                                placeholder="John Doe" 
-                                required
-                            >
+                            <input type="text" id="signup-fullname" name="fullname" placeholder="John Doe" required>
                         </div>
 
                         <div class="form-group">
                             <label for="signup-email">Email Address</label>
-                            <input 
-                                type="email" 
-                                id="signup-email" 
-                                name="email" 
-                                placeholder="john@example.com" 
-                                required
-                            >
+                            <input type="email" id="signup-email" name="email" placeholder="john@example.com" required>
                         </div>
 
                         <div class="form-group">
                             <label for="signup-password">Password</label>
-                            <input 
-                                type="password" 
-                                id="signup-password" 
-                                name="password" 
-                                placeholder="Create a strong password" 
-                                minlength="8"
-                                required
-                            >
+                            <input type="password" id="signup-password" name="password"
+                                placeholder="Create a strong password" minlength="8" required>
                         </div>
 
                         <div class="form-group">
                             <label for="signup-confirm-password">Confirm Password</label>
-                            <input 
-                                type="password" 
-                                id="signup-confirm-password" 
-                                name="confirm_password" 
-                                placeholder="Re-enter your password" 
-                                minlength="8"
-                                required
-                            >
+                            <input type="password" id="signup-confirm-password" name="confirm_password"
+                                placeholder="Re-enter your password" minlength="8" required>
                         </div>
 
                         <div class="form-options terms-option">
                             <label class="checkbox-container">
                                 <input type="checkbox" id="terms" name="terms" required>
-                                <span class="checkbox-label">I agree to the <a href="#terms-conditions">Terms and Conditions</a></span>
+                                <span class="checkbox-label">I agree to the <a href="#terms-conditions">Terms and
+                                        Conditions</a></span>
                             </label>
                         </div>
 
@@ -192,24 +163,30 @@
                 </div>
                 <div class="about-content">
                     <p class="about-description">
-                        <strong>EduPortal</strong> is a centralized digital learning platform built for higher education institutions. Designed to bridge communication between students, faculty members, and academic departments, the portal offers unified access to lecture materials, laboratory experiment submissions, grade reports, and university announcements in one seamless interface.
+                        <strong>EduPortal</strong> is a centralized digital learning platform built for higher education
+                        institutions. Designed to bridge communication between students, faculty members, and academic
+                        departments, the portal offers unified access to lecture materials, laboratory experiment
+                        submissions, grade reports, and university announcements in one seamless interface.
                     </p>
 
                     <div class="features-grid">
                         <div class="feature-card">
                             <div class="feature-icon">&#128218;</div>
                             <h3>Course Resources</h3>
-                            <p>Access syllabus outlines, downloadable lecture notes, assignments, and study materials anywhere.</p>
+                            <p>Access syllabus outlines, downloadable lecture notes, assignments, and study materials
+                                anywhere.</p>
                         </div>
                         <div class="feature-card">
                             <div class="feature-icon">&#9881;</div>
                             <h3>Lab Management</h3>
-                            <p>Submit Web Technology code assignments, verify experiment results, and track evaluation records.</p>
+                            <p>Submit Web Technology code assignments, verify experiment results, and track evaluation
+                                records.</p>
                         </div>
                         <div class="feature-card">
                             <div class="feature-icon">&#128202;</div>
                             <h3>Performance Tracking</h3>
-                            <p>Monitor real-time academic attendance, internal assessment scores, and examination results.</p>
+                            <p>Monitor real-time academic attendance, internal assessment scores, and examination
+                                results.</p>
                         </div>
                     </div>
                 </div>
@@ -222,10 +199,12 @@
         <div class="footer-container">
             <div class="footer-info">
                 <p class="footer-address">
-                    <strong>Developer Address:</strong> Department of Computer Science &amp; Engineering, Technology Campus, Tamil Nadu, India - 641114
+                    <strong>Developer Address:</strong> Department of Computer Science &amp; Engineering, Technology
+                    Campus, Tamil Nadu, India - 641114
                 </p>
                 <p class="footer-reg">
-                    <strong>Register Number:</strong> URK24CS1273 | <strong>Lab Batch:</strong> Web Technology Lab Batch 1
+                    <strong>Register Number:</strong> URK24CS1273 | <strong>Lab Batch:</strong> Web Technology Lab Batch
+                    1
                 </p>
             </div>
             <div class="footer-bottom">
@@ -235,4 +214,5 @@
     </footer>
 
 </body>
+
 </html>
