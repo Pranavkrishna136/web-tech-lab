@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Tech Lab - Experiment 5: JavaScript DOM & Events</title>
     <link rel="stylesheet" href="style.css">
 </head>
+<!-- Republish GitHub Pages -->
+
 <body>
 
     <!-- Header Section -->
@@ -42,9 +45,11 @@
             <div class="card-header">
                 <span class="badge">Activity 1</span>
                 <h2>DOM Elements Demonstration</h2>
-                <p>Demonstrating <code>getElementById</code>, <code>getElementsByTagName</code>, <code>getElementsByClassName</code>, and <code>querySelectorAll</code>.</p>
+                <p>Demonstrating <code>getElementById</code>, <code>getElementsByTagName</code>,
+                    <code>getElementsByClassName</code>, and <code>querySelectorAll</code>.
+                </p>
             </div>
-            
+
             <div class="dom-demo-box">
                 <div id="demo-target-id" class="target-box">
                     <p class="demo-tag-p">Paragraph 1: Testing <code>getElementsByTagName</code></p>
@@ -63,7 +68,7 @@
                     <button class="btn btn-orange" onclick="testQuerySelectorAll()">Test querySelectorAll()</button>
                     <button class="btn btn-gray" onclick="resetDomDemo()">Reset DOM</button>
                 </div>
-                
+
                 <div class="result-box" id="dom-result-text">
                     Click any button above to see DOM manipulation in action.
                 </div>
@@ -75,15 +80,18 @@
             <div class="card-header">
                 <span class="badge">Activity 2</span>
                 <h2>JavaScript Events Demonstration</h2>
-                <p>Demonstrating <code>onclick</code>, <code>onchange</code>, <code>onmouseover</code>, <code>onmouseout</code>, <code>onkeydown</code>, and <code>onsubmit</code>.</p>
+                <p>Demonstrating <code>onclick</code>, <code>onchange</code>, <code>onmouseover</code>,
+                    <code>onmouseout</code>, <code>onkeydown</code>, and <code>onsubmit</code>.
+                </p>
             </div>
 
             <div class="grid-2">
                 <!-- Click & Change -->
                 <div class="event-item">
                     <h3>1. onclick &amp; onchange</h3>
-                    <button id="click-btn" class="btn btn-blue" onclick="handleClickEvent()">Click Me (Count: 0)</button>
-                    
+                    <button id="click-btn" class="btn btn-blue" onclick="handleClickEvent()">Click Me (Count:
+                        0)</button>
+
                     <div class="form-group" style="margin-top: 14px;">
                         <label for="event-select">Select a Programming Language:</label>
                         <select id="event-select" onchange="handleChangeEvent()">
@@ -100,12 +108,8 @@
                 <!-- Hover Events -->
                 <div class="event-item">
                     <h3>2. onmouseover &amp; onmouseout</h3>
-                    <div 
-                        id="hover-box" 
-                        class="hover-target" 
-                        onmouseover="handleMouseOver()" 
-                        onmouseout="handleMouseOut()"
-                    >
+                    <div id="hover-box" class="hover-target" onmouseover="handleMouseOver()"
+                        onmouseout="handleMouseOut()">
                         Hover Your Mouse Over This Box!
                     </div>
                     <div id="hover-status" class="status-msg">Mouse status: Outside box.</div>
@@ -115,12 +119,7 @@
                 <div class="event-item">
                     <h3>3. onkeydown Event</h3>
                     <label for="key-input">Type anything in this field:</label>
-                    <input 
-                        type="text" 
-                        id="key-input" 
-                        placeholder="Type here..." 
-                        onkeydown="handleKeyDown(event)"
-                    >
+                    <input type="text" id="key-input" placeholder="Type here..." onkeydown="handleKeyDown(event)">
                     <div id="key-status" class="status-msg">Last Key Pressed: None</div>
                 </div>
 
@@ -147,11 +146,8 @@
 
             <div class="form-group">
                 <label for="sentence-input">Enter a Sentence:</label>
-                <textarea 
-                    id="sentence-input" 
-                    rows="3" 
-                    placeholder="e.g. JavaScript DOM elements and interactive events make modern web applications powerful."
-                >JavaScript DOM elements and interactive events make modern web applications powerful.</textarea>
+                <textarea id="sentence-input" rows="3"
+                    placeholder="e.g. JavaScript DOM elements and interactive events make modern web applications powerful.">JavaScript DOM elements and interactive events make modern web applications powerful.</textarea>
             </div>
 
             <div class="button-group">
@@ -195,10 +191,22 @@
             <div class="info-table-wrap">
                 <p><strong>BMI Categories Reference:</strong></p>
                 <table class="mini-table">
-                    <tr><th>Underweight</th><td>BMI &lt; 18.5</td></tr>
-                    <tr><th>Normal Weight</th><td>BMI 18.5 &ndash; 24.9</td></tr>
-                    <tr><th>Overweight</th><td>BMI 25.0 &ndash; 29.9</td></tr>
-                    <tr><th>Obese</th><td>BMI &ge; 30.0</td></tr>
+                    <tr>
+                        <th>Underweight</th>
+                        <td>BMI &lt; 18.5</td>
+                    </tr>
+                    <tr>
+                        <th>Normal Weight</th>
+                        <td>BMI 18.5 &ndash; 24.9</td>
+                    </tr>
+                    <tr>
+                        <th>Overweight</th>
+                        <td>BMI 25.0 &ndash; 29.9</td>
+                    </tr>
+                    <tr>
+                        <th>Obese</th>
+                        <td>BMI &ge; 30.0</td>
+                    </tr>
                 </table>
             </div>
         </section>
@@ -230,7 +238,8 @@
             <div class="fruit-stats" id="fruit-stats" style="display: none;">
                 <span class="stat-badge apple-stat">&#127822; Apples: <strong id="apple-count">0</strong></span>
                 <span class="stat-badge orange-stat">&#127818; Oranges: <strong id="orange-count">0</strong></span>
-                <span class="stat-badge total-stat">&#129386; Total Fruits: <strong id="total-fruit-count">0</strong></span>
+                <span class="stat-badge total-stat">&#129386; Total Fruits: <strong
+                        id="total-fruit-count">0</strong></span>
             </div>
 
             <div id="farm-grid-container" class="farm-grid-wrapper">
@@ -249,7 +258,8 @@
             <div class="grid-2">
                 <div class="form-group">
                     <label for="currency-amount">Amount:</label>
-                    <input type="number" id="currency-amount" placeholder="Enter amount" min="0" step="0.01" value="1000">
+                    <input type="number" id="currency-amount" placeholder="Enter amount" min="0" step="0.01"
+                        value="1000">
                 </div>
                 <div class="form-group">
                     <label for="conversion-type">Conversion Type:</label>
@@ -388,4 +398,5 @@
     <script src="script.js"></script>
 
 </body>
+
 </html>
