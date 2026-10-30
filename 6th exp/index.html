@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Tech Lab - Experiment 6: JavaScript Styles and Animations</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- =========================================================
+         Site Header
+         ========================================================= -->
+    <header class="site-header" id="top">
+        <div class="header-container">
+            <div class="header-badge">EXPERIMENT NO. 06</div>
+            <h1 class="header-title">JavaScript: Styles and Animations</h1>
+            <p class="header-subtitle">Web Technology Laboratory | Dynamic CSS, Timers, Object-Oriented JS &amp; DOM Manipulation</p>
+            <div class="student-pill">
+                <span class="pill-item">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    Student: <strong>Pranav Krishna KP</strong>
+                </span>
+                <span class="pill-divider">•</span>
+                <span class="pill-item">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="4" width="18" height="16" rx="2"></rect>
+                        <line x1="7" y1="8" x2="17" y2="8"></line>
+                        <line x1="7" y1="12" x2="13" y2="12"></line>
+                    </svg>
+                    Reg No: <strong>URK24CS1273</strong>
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <!-- =========================================================
+         Sticky Navigation Bar
+         ========================================================= -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#top" class="nav-brand">Exp 6: JS</a>
+            <ul class="nav-menu">
+                <li><a href="#clock">1. Digital Clock</a></li>
+                <li><a href="#dynamic-bg">2. Dynamic BG</a></li>
+                <li><a href="#font-zoom">3. Font Zoom</a></li>
+                <li><a href="#car-anim">4. Car Animation</a></li>
+                <li><a href="#students">5. Student Objects</a></li>
+                <li><a href="#extra-concepts">6. Concept Lab</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- =========================================================
+         Hero Section
+         ========================================================= -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <span class="hero-tag">Lab Curriculum &amp; Practical Guide</span>
+            <h2>Mastering JavaScript Styles, Timing Events &amp; Objects</h2>
+            <p>
+                Explore interactive demonstrations of core client-side JavaScript features including
+                <code>setInterval()</code>, <code>setTimeout()</code>, the <code>Date</code> object,
+                dynamic CSS manipulation via <code>element.style</code>, frame-by-frame animations,
+                and structured data handling with arrays of objects.
+            </p>
+            <div class="hero-stats-grid">
+                <div class="hero-stat-card">
+                    <span class="stat-num">5+1</span>
+                    <span class="stat-label">Programs &amp; Demos</span>
+                </div>
+                <div class="hero-stat-card">
+                    <span class="stat-num">100%</span>
+                    <span class="stat-label">Vanilla JavaScript</span>
+                </div>
+                <div class="hero-stat-card">
+                    <span class="stat-num">0</span>
+                    <span class="stat-label">External Frameworks</span>
+                </div>
+                <div class="hero-stat-card">
+                    <span class="stat-num">ES6+</span>
+                    <span class="stat-label">Modern Lab Code</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================
+         Main Content Area
+         ========================================================= -->
+    <main class="main-container">
+
+        <!-- =====================================================
+             Program 1: Digital Clock
+             ===================================================== -->
+        <section class="card program-card" id="clock">
+            <div class="card-header">
+                <div class="header-left">
+                    <span class="badge badge-purple">Program 1</span>
+                    <h2>Digital Clock</h2>
+                </div>
+                <span class="concept-tag"><code>Date</code> Object &bull; <code>setInterval()</code></span>
+            </div>
+            <p class="card-desc">
+                Displays a real-time digital clock showing hours, minutes, and seconds. Implemented using the JavaScript
+                <code>Date</code> object methods (<code>getHours()</code>, <code>getMinutes()</code>, <code>getSeconds()</code>)
+                and updated continuously every 1000 milliseconds using <code>setInterval()</code>.
+            </p>
+
+            <div class="clock-showcase">
+                <!-- Date Pill Display -->
+                <div class="clock-date-display" id="clock-date">
+                    Loading current date...
+                </div>
+
+                <!-- Digital Flip-Clock UI -->
+                <div class="clock-digits-container">
+                    <!-- Hours -->
+                    <div class="clock-segment">
+                        <div class="digit-box" id="clock-hours">00</div>
+                        <span class="digit-label">HOURS</span>
+                    </div>
+
+                    <div class="clock-separator">:</div>
+
+                    <!-- Minutes -->
+                    <div class="clock-segment">
+                        <div class="digit-box" id="clock-minutes">00</div>
+                        <span class="digit-label">MINUTES</span>
+                    </div>
+
+                    <div class="clock-separator">:</div>
+
+                    <!-- Seconds -->
+                    <div class="clock-segment">
+                        <div class="digit-box" id="clock-seconds">00</div>
+                        <span class="digit-label">SECONDS</span>
+                    </div>
+
+                    <!-- Period (AM / PM) -->
+                    <div class="clock-period-box" id="clock-period">
+                        --
+                    </div>
+                </div>
+
+                <!-- Controls & Format Toggle -->
+                <div class="clock-controls">
+                    <button class="btn btn-primary" id="btn-toggle-clock-format" onclick="toggleClockFormat()">
+                        Switch to 24-Hour Format
+                    </button>
+                    <button class="btn btn-outline" id="btn-pause-clock" onclick="toggleClockPause()">
+                        Pause Clock
+                    </button>
+                    <span class="clock-status-tag" id="clock-status">● Live (1000ms Interval)</span>
+                </div>
+
+                <!-- Technical Explanation Accordion -->
+                <details class="code-details">
+                    <summary>View Lab Code &amp; Explanation</summary>
+                    <div class="code-snippet-box">
+                        <pre><code>// Program 1: Digital Clock using Date Object and setInterval()
+function updateClock() {
+    var now = new Date();
+    var h = now.getHours();
+    var m = now.getMinutes();
+    var s = now.getSeconds();
+
+    // Pad single digits with leading zero
+    h = h < 10 ? "0" + h : h;
+    m = m < 10 ? "0" + m : m;
+    s = s < 10 ? "0" + s : s;
+
+    document.getElementById("clock-hours").innerText = h;
+    document.getElementById("clock-minutes").innerText = m;
+    document.getElementById("clock-seconds").innerText = s;
+}
+
+// Call updateClock every 1000ms
+setInterval(updateClock, 1000);
+updateClock();</code></pre>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <!-- =====================================================
+             Program 2: Dynamic Background Colour
+             ===================================================== -->
+        <section class="card program-card" id="dynamic-bg">
+            <div class="card-header">
+                <div class="header-left">
+                    <span class="badge badge-emerald">Program 2</span>
+                    <h2>Dynamic Background!</h2>
+                </div>
+                <span class="concept-tag"><code>Math.random()</code> &bull; <code>document.body.style</code> &bull; <code>setInterval()</code></span>
+            </div>
+            <p class="card-desc">
+                Generates random RGB colour values using <code>Math.floor(Math.random() * 256)</code> and dynamically changes
+                the webpage background colour every 30 seconds using <code>setInterval()</code>. You can also trigger an immediate
+                change using the button below.
+            </p>
+
+            <div class="dynamic-bg-container" id="bg-demo-area">
+                <div class="dynamic-bg-inner">
+                    <h3 class="bg-heading">Dynamic Background!</h3>
+                    <p class="bg-subtext">The page background colour updates automatically every 30 seconds.</p>
+
+                    <!-- Current Color Info Card -->
+                    <div class="color-info-card">
+                        <div class="color-swatch" id="color-swatch-preview"></div>
+                        <div class="color-details-group">
+                            <div class="color-code-item">
+                                <span class="label">RGB Value:</span>
+                                <span class="value" id="current-rgb-text">rgb(241, 245, 249)</span>
+                            </div>
+                            <div class="color-code-item">
+                                <span class="label">Hex Code:</span>
+                                <span class="value" id="current-hex-text">#F1F5F9</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 30-Second Countdown Meter -->
+                    <div class="timer-countdown-box">
+                        <div class="countdown-label-row">
+                            <span>Next Automatic Change:</span>
+                            <strong id="bg-countdown-timer">30 seconds</strong>
+                        </div>
+                        <div class="progress-bar-track">
+                            <div class="progress-bar-fill" id="bg-timer-progress"></div>
+                        </div>
+                    </div>
+
+                    <!-- Button Action Bar -->
+                    <div class="button-row">
+                        <button class="btn btn-success" onclick="changeBackgroundNow()">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"/>
+                            </svg>
+                            Change Colour Immediately
+                        </button>
+                        <button class="btn btn-outline" id="btn-toggle-bg-timer" onclick="toggleBgTimer()">
+                            Pause 30s Timer
+                        </button>
+                        <button class="btn btn-ghost" onclick="resetBackgroundColor()">
+                            Reset to Default
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Technical Explanation Accordion -->
+                <details class="code-details">
+                    <summary>View Lab Code &amp; Explanation</summary>
+                    <div class="code-snippet-box">
+                        <pre><code>// Program 2: Dynamic Background Colour every 30 seconds
+function changeBackgroundColor() {
+    // Generate random values between 0 and 255
+    var r = Math.floor(Math.random() * 256);
+    var g = Math.floor(Math.random() * 256);
+    var b = Math.floor(Math.random() * 256);
+
+    // Apply color to body background style
+    var rgbColor = "rgb(" + r + ", " + g + ", " + b + ")";
+    document.body.style.backgroundColor = rgbColor;
+}
+
+// Call changeBackgroundColor every 30 seconds (30,000 milliseconds)
+setInterval(changeBackgroundColor, 30000);</code></pre>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <!-- =====================================================
+             Program 3: Change Font Size
+             ===================================================== -->
+        <section class="card program-card" id="font-zoom">
+            <div class="card-header">
+                <div class="header-left">
+                    <span class="badge badge-amber">Program 3</span>
+                    <h2>Change Font Size (Hover Zoom)</h2>
+                </div>
+                <span class="concept-tag"><code>onmouseover</code> &bull; <code>onmouseout</code> &bull; <code>element.style.fontSize</code></span>
+            </div>
+            <p class="card-desc">
+                Demonstrates dynamic style manipulation on hover. Moving the mouse cursor over the interactive box triggers
+                <code>incSize()</code> to enlarge the font to <strong>28px</strong>. Moving the mouse away triggers
+                <code>decSize()</code> to restore the font size to <strong>16px</strong>.
+            </p>
+
+            <div class="font-zoom-container">
+                <!-- Interactive Target Box -->
+                <div class="zoom-box-wrapper">
+                    <div id="zoom-paragraph" class="zoom-paragraph" onmouseover="incSize()" onmouseout="decSize()">
+                        Move cursor over me to zoom in
+                    </div>
+                </div>
+
+                <!-- Live Status & Indicator -->
+                <div class="zoom-status-bar">
+                    <div class="status-indicator">
+                        <span>Current Size:</span>
+                        <span class="size-badge" id="current-size-badge">16px</span>
+                    </div>
+                    <div class="status-indicator">
+                        <span>Event State:</span>
+                        <span class="state-badge" id="zoom-event-state">Mouse Out (Normal)</span>
+                    </div>
+                </div>
+
+                <!-- Manual Test Buttons (for touchscreen & inspection) -->
+                <div class="button-row">
+                    <button class="btn btn-amber" onclick="incSize()">Simulate Mouseover (28px)</button>
+                    <button class="btn btn-outline" onclick="decSize()">Simulate Mouseout (16px)</button>
+                    <button class="btn btn-ghost" onclick="togglePulseAnimation()">Toggle Auto Pulse</button>
+                </div>
+
+                <!-- Technical Explanation Accordion -->
+                <details class="code-details">
+                    <summary>View Lab Code &amp; Explanation</summary>
+                    <div class="code-snippet-box">
+                        <pre><code>// Program 3: Change Font Size on Hover
+function incSize() {
+    var elem = document.getElementById("zoom-paragraph");
+    elem.style.fontSize = "28px";
+}
+
+function decSize() {
+    var elem = document.getElementById("zoom-paragraph");
+    elem.style.fontSize = "16px";
+}</code></pre>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <!-- =====================================================
+             Program 4: Car Movement Animation
+             ===================================================== -->
+        <section class="card program-card" id="car-anim">
+            <div class="card-header">
+                <div class="header-left">
+                    <span class="badge badge-rose">Program 4</span>
+                    <h2>Car Movement Animation</h2>
+                </div>
+                <span class="concept-tag"><code>setTimeout()</code> &bull; <code>clearTimeout()</code> &bull; Boundary Checking</span>
+            </div>
+            <p class="card-desc">
+                Smooth frame animation moving a car across a horizontal track. Uses <code>init()</code> to set the initial position,
+                <code>moveRight()</code> with recursive <code>setTimeout()</code> to move towards the right, and
+                <code>clearTimeout()</code> to stop the car. Includes a boundary collision check so the car stays safely inside the track.
+            </p>
+
+            <div class="car-animation-showcase">
+                <!-- Track Container -->
+                <div class="track-wrapper" id="track-wrapper">
+                    <div class="track-surface" id="road-track">
+                        <!-- Start & Finish Markings -->
+                        <div class="track-marker start-line"><span>START</span></div>
+                        <div class="track-lane-divider"></div>
+                        <div class="track-marker finish-line"><span>FINISH</span></div>
+
+                        <!-- Moving Car Image -->
+                        <img src="images/car.png" alt="Animated Sports Car" id="car-image" class="car-element">
+                    </div>
+                </div>
+
+                <!-- Telemetry & Stats Bar -->
+                <div class="car-telemetry-bar">
+                    <div class="telemetry-item">
+                        <span class="label">Position:</span>
+                        <strong id="car-pos-text">0 px</strong>
+                    </div>
+                    <div class="telemetry-item">
+                        <span class="label">Progress:</span>
+                        <strong id="car-progress-text">0%</strong>
+                    </div>
+                    <div class="telemetry-item">
+                        <span class="label">Status:</span>
+                        <span class="badge-status" id="car-status-badge">Ready / Stationary</span>
+                    </div>
+                    <div class="telemetry-item">
+                        <span class="label">Speed:</span>
+                        <select id="car-speed-select" class="speed-select" onchange="updateCarSpeed()">
+                            <option value="2">Slow (2px / frame)</option>
+                            <option value="5" selected>Normal (5px / frame)</option>
+                            <option value="10">Turbo (10px / frame)</option>
+                            <option value="20">Nitro (20px / frame)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Animation Controls -->
+                <div class="button-row">
+                    <button class="btn btn-success" id="btn-car-move" onclick="moveRight()">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                        </svg>
+                        Move
+                    </button>
+                    <button class="btn btn-danger" id="btn-car-stop" onclick="stopCar()">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <rect x="6" y="6" width="12" height="12"></rect>
+                        </svg>
+                        Stop
+                    </button>
+                    <button class="btn btn-outline" id="btn-car-reset" onclick="init()">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M1 4v6h6M23 20v-6h-6M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15"/>
+                        </svg>
+                        Reset Position
+                    </button>
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="car-loop-check">
+                        <span>Continuous Loop Track</span>
+                    </label>
+                </div>
+
+                <!-- Technical Explanation Accordion -->
+                <details class="code-details">
+                    <summary>View Lab Code &amp; Explanation</summary>
+                    <div class="code-snippet-box">
+                        <pre><code>// Program 4: Car Movement Animation using setTimeout & clearTimeout
+var car = null;
+var timer = null;
+var pos = 0;
+var speed = 5;
+
+function init() {
+    car = document.getElementById("car-image");
+    car.style.position = "relative";
+    car.style.left = "0px";
+    pos = 0;
+    clearTimeout(timer);
+}
+
+function moveRight() {
+    var track = document.getElementById("road-track");
+    var maxRight = track.clientWidth - car.offsetWidth - 10;
+
+    if (pos < maxRight) {
+        pos += speed;
+        car.style.left = pos + "px";
+        timer = setTimeout(moveRight, 20); // Repeat every 20ms
+    } else {
+        clearTimeout(timer); // Boundary reached: stop
+    }
+}
+
+function stopCar() {
+    clearTimeout(timer);
+}
+
+window.onload = init;</code></pre>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <!-- =====================================================
+             Program 5: Student Details Using Array of Objects
+             ===================================================== -->
+        <section class="card program-card" id="students">
+            <div class="card-header">
+                <div class="header-left">
+                    <span class="badge badge-cyan">Program 5</span>
+                    <h2>Student Details (Array of Objects)</h2>
+                </div>
+                <span class="concept-tag">Objects &bull; <code>for</code> Loop &bull; <code>if / else</code> Statements</span>
+            </div>
+            <p class="card-desc">
+                Maintains an array containing student objects with properties <code>name</code>, <code>regNo</code>, and
+                <code>yob</code> (year of birth). A <code>for</code> loop iterates through the collection, using
+                <code>if/else</code> conditions to categorize each student as:
+                <strong>Born before 2000</strong>, <strong>Born in 2000</strong>, or <strong>Born after 2000</strong>.
+            </p>
+
+            <div class="student-program-container">
+
+                <!-- Summary Badges Bar -->
+                <div class="student-stats-row">
+                    <div class="student-stat-pill all-pill active" onclick="filterStudents('all')">
+                        <span class="stat-count" id="count-all">0</span>
+                        <span class="stat-text">Total Students</span>
+                    </div>
+                    <div class="student-stat-pill before-pill" onclick="filterStudents('before')">
+                        <span class="stat-count" id="count-before">0</span>
+                        <span class="stat-text">Born Before 2000</span>
+                    </div>
+                    <div class="student-stat-pill exact-pill" onclick="filterStudents('exact')">
+                        <span class="stat-count" id="count-exact">0</span>
+                        <span class="stat-text">Born in 2000</span>
+                    </div>
+                    <div class="student-stat-pill after-pill" onclick="filterStudents('after')">
+                        <span class="stat-count" id="count-after">0</span>
+                        <span class="stat-text">Born After 2000</span>
+                    </div>
+                </div>
+
+                <!-- Display Table -->
+                <div class="table-responsive">
+                    <table class="student-table" id="student-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Student Name</th>
+                                <th>Register Number</th>
+                                <th>Year of Birth</th>
+                                <th>Calculated Age</th>
+                                <th>Category (if/else)</th>
+                            </tr>
+                        </thead>
+                        <tbody id="student-table-body">
+                            <!-- Populated dynamically by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Add New Student Form -->
+                <div class="add-student-box">
+                    <h4>Add Student to Array (Interactive Test)</h4>
+                    <form id="add-student-form" onsubmit="handleAddStudent(event)">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="stu-name">Student Name:</label>
+                                <input type="text" id="stu-name" placeholder="e.g. Rohith Kumar" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="stu-reg">Register Number:</label>
+                                <input type="text" id="stu-reg" placeholder="e.g. URK24CS1350" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="stu-yob">Year of Birth:</label>
+                                <input type="number" id="stu-yob" min="1970" max="2026" placeholder="e.g. 2000" required>
+                            </div>
+                            <div class="form-group btn-col">
+                                <label>&nbsp;</label>
+                                <button type="submit" class="btn btn-primary">Add Student</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Technical Explanation Accordion -->
+                <details class="code-details">
+                    <summary>View Lab Code &amp; Explanation</summary>
+                    <div class="code-snippet-box">
+                        <pre><code>// Program 5: Student Details using Array of Objects and if/else conditions
+var students = [
+    { name: "Pranav Krishna", regNo: "URK24CS1273", yob: 2004 },
+    { name: "Rahul Sharma",   regNo: "URK24CS1001", yob: 1998 },
+    { name: "Sneha Patel",    regNo: "URK24CS1045", yob: 2000 },
+    { name: "Aditya Verma",   regNo: "URK24CS1112", yob: 1999 },
+    { name: "Ananya Iyer",    regNo: "URK24CS1205", yob: 2000 },
+    { name: "Kevin Joseph",   regNo: "URK24CS1330", yob: 2003 }
+];
+
+// Iterate using for loop and classify using if/else
+for (var i = 0; i < students.length; i++) {
+    var student = students[i];
+    var category = "";
+
+    if (student.yob < 2000) {
+        category = "Born before 2000";
+    } else if (student.yob === 2000) {
+        category = "Born in 2000";
+    } else {
+        category = "Born after 2000";
+    }
+
+    console.log(student.name + " (" + student.regNo + "): " + category);
+}</code></pre>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <!-- =====================================================
+             Section 7: Additional Concept Demonstrations
+             ===================================================== -->
+        <section class="card program-card" id="extra-concepts">
+            <div class="card-header">
+                <div class="header-left">
+                    <span class="badge badge-indigo">Concept Lab</span>
+                    <h2>Additional JavaScript Demonstrations</h2>
+                </div>
+                <span class="concept-tag">Syllabus Expansion &bull; Practical Viva Mastery</span>
+            </div>
+            <p class="card-desc">
+                Interactive demonstrations showcasing core JavaScript capabilities: timing events, date operations,
+                ES6 object-oriented classes, dynamic CSS styling via <code>element.style</code>, visibility toggling via <code>display</code>,
+                and smooth opacity fade animations.
+            </p>
+
+            <div class="concept-grid">
+
+                <!-- 1. setTimeout() Demo -->
+                <div class="concept-card">
+                    <div class="concept-card-top">
+                        <span class="mini-badge">Demo A</span>
+                        <h3>1. <code>setTimeout()</code> Delayed Action</h3>
+                    </div>
+                    <p>Executes a callback function after a specified delay in milliseconds.</p>
+                    <div class="concept-demo-box">
+                        <div class="demo-result-box" id="timeout-result">
+                            Status: Waiting to trigger (3-second timer)
+                        </div>
+                        <div class="btn-group-sm">
+                            <button class="btn btn-blue btn-sm" onclick="triggerTimeoutDemo()">
+                                Start 3s Timer
+                            </button>
+                            <button class="btn btn-outline btn-sm" onclick="cancelTimeoutDemo()">
+                                Cancel (clearTimeout)
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. setInterval() & clearInterval() Demo -->
+                <div class="concept-card">
+                    <div class="concept-card-top">
+                        <span class="mini-badge">Demo B</span>
+                        <h3>2. <code>setInterval()</code> &amp; <code>clearInterval()</code></h3>
+                    </div>
+                    <p>Repeats a callback continuously at fixed intervals until stopped.</p>
+                    <div class="concept-demo-box">
+                        <div class="counter-display">
+                            <span class="counter-num" id="interval-counter-val">00:00.0</span>
+                        </div>
+                        <div class="btn-group-sm">
+                            <button class="btn btn-green btn-sm" onclick="startIntervalDemo()">Start</button>
+                            <button class="btn btn-danger btn-sm" onclick="stopIntervalDemo()">Stop</button>
+                            <button class="btn btn-outline btn-sm" onclick="resetIntervalDemo()">Reset</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Date Object Methods Demo -->
+                <div class="concept-card">
+                    <div class="concept-card-top">
+                        <span class="mini-badge">Demo C</span>
+                        <h3>3. Date Object Methods</h3>
+                    </div>
+                    <p>Comprehensive inspector for standard JavaScript Date getters.</p>
+                    <div class="concept-demo-box">
+                        <div class="date-methods-list" id="date-methods-output">
+                            <!-- Populated by script.js -->
+                        </div>
+                        <button class="btn btn-outline btn-sm" style="width:100%; margin-top:8px;" onclick="refreshDateMethods()">
+                            Refresh Current Timestamp
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 4. JavaScript Classes and Objects -->
+                <div class="concept-card">
+                    <div class="concept-card-top">
+                        <span class="mini-badge">Demo D</span>
+                        <h3>4. Classes &amp; Objects (ES6)</h3>
+                    </div>
+                    <p>Define a template with <code>class</code>, instantiate with <code>new</code>, and invoke methods.</p>
+                    <div class="concept-demo-box">
+                        <div class="code-snippet-box-sm">
+                            <pre><code>class Vehicle {
+  constructor(brand, model, year) {
+    this.brand = brand;
+    this.model = model;
+    this.year = year;
+  }
+  getInfo() {
+    return `${this.year} ${this.brand} ${this.model}`;
+  }
+}</code></pre>
+                        </div>
+                        <div class="btn-group-sm">
+                            <button class="btn btn-purple btn-sm" onclick="instantiateClassDemo()">
+                                Create &amp; Call Method
+                            </button>
+                        </div>
+                        <div class="demo-result-box" id="class-result">
+                            Click button to instantiate <code>Vehicle</code> class
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Changing CSS styles using element.style -->
+                <div class="concept-card">
+                    <div class="concept-card-top">
+                        <span class="mini-badge">Demo E</span>
+                        <h3>5. Style via <code>element.style</code></h3>
+                    </div>
+                    <p>Direct inline CSS property manipulation from JavaScript.</p>
+                    <div class="concept-demo-box">
+                        <div class="style-target-box" id="style-target-box">
+                            Styling Target Element
+                        </div>
+                        <div class="style-controls-grid">
+                            <button class="btn btn-xs btn-outline" onclick="changeBoxStyle('bg')">Random BG</button>
+                            <button class="btn btn-xs btn-outline" onclick="changeBoxStyle('radius')">Toggle Rounded</button>
+                            <button class="btn btn-xs btn-outline" onclick="changeBoxStyle('border')">Toggle Border</button>
+                            <button class="btn btn-xs btn-outline" onclick="changeBoxStyle('shadow')">Toggle Glow</button>
+                            <button class="btn btn-xs btn-ghost" onclick="changeBoxStyle('reset')">Reset</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. Showing and Hiding Elements using display -->
+                <div class="concept-card">
+                    <div class="concept-card-top">
+                        <span class="mini-badge">Demo F</span>
+                        <h3>6. Show / Hide via <code>display</code></h3>
+                    </div>
+                    <p>Toggle between <code>display: none</code> and <code>display: block</code>.</p>
+                    <div class="concept-demo-box">
+                        <div class="display-box-target" id="display-target">
+                            Peek-a-boo! I am visible right now.
+                        </div>
+                        <div class="btn-group-sm">
+                            <button class="btn btn-blue btn-sm" onclick="toggleDisplay('hide')">Hide (none)</button>
+                            <button class="btn btn-green btn-sm" onclick="toggleDisplay('show')">Show (block)</button>
+                            <button class="btn btn-outline btn-sm" onclick="toggleDisplay('toggle')">Toggle</button>
+                        </div>
+                        <div class="display-status-text" id="display-status-text">
+                            Current: <code>element.style.display = "block"</code>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7. Fade-out Animation using Opacity -->
+                <div class="concept-card full-width-concept">
+                    <div class="concept-card-top">
+                        <span class="mini-badge">Demo G</span>
+                        <h3>7. Fade-Out &amp; Fade-In Animation via <code>opacity</code></h3>
+                    </div>
+                    <p>
+                        Gradually decrements or increments <code>element.style.opacity</code> using an interval loop to achieve a smooth fade transition.
+                    </p>
+                    <div class="concept-demo-box">
+                        <div class="fade-showcase-row">
+                            <div class="fade-box-target" id="fade-target">
+                                <h4>Smooth Fade Target</h4>
+                                <p>Watch my opacity transition frame by frame!</p>
+                                <span class="opacity-meter" id="fade-meter">Opacity: 1.00</span>
+                            </div>
+                            <div class="fade-controls-col">
+                                <button class="btn btn-rose" onclick="fadeOutElement()">
+                                    Fade Out (1.0 &rarr; 0.0)
+                                </button>
+                                <button class="btn btn-success" onclick="fadeInElement()">
+                                    Fade In (0.0 &rarr; 1.0)
+                                </button>
+                                <button class="btn btn-outline" onclick="resetFadeElement()">
+                                    Reset Opacity (1.0)
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- =========================================================
+         Site Footer
+         ========================================================= -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <h3>Experiment 6 &bull; Web Technology Laboratory</h3>
+                <p>Designed and built with modern semantic HTML5, CSS3, and vanilla JavaScript.</p>
+                <p class="footer-meta">Karunya Institute of Technology and Sciences &bull; Department of Computer Science and Engineering</p>
+            </div>
+            <div class="footer-right">
+                <div class="footer-student-card">
+                    <h4>Student Information</h4>
+                    <p><strong>Name:</strong> Pranav Krishna KP</p>
+                    <p><strong>Register Number:</strong> URK24CS1273</p>
+                    <p><strong>Subject:</strong> Web Technology Lab</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Pranav Krishna KP (URK24CS1273). All rights reserved.</p>
+            <a href="#top" class="back-to-top">Back to top &uarr;</a>
+        </div>
+    </footer>
+
+    <!-- JavaScript File Link -->
+    <script src="script.js"></script>
+</body>
+
+</html>
